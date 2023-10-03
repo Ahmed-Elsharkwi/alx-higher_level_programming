@@ -8,5 +8,6 @@ def fizzbuzz():
             str = "Fizz"
         elif i % 5 == 0:
             str = "Buzz"
-        print(f"{str} ", end="")
-    print("Buzz", end="")
+        if i != 100:
+            str = f"{str} "
+        print(f"{str}", end="")
