@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-Ahmed = "ABCDEFGHIJKLMNOPQRSTUWXYZ"
-print(Ahmed)
+str = "ABCDEFGHIJKLMNOPQRSTUWXYZ"
+print(str)
