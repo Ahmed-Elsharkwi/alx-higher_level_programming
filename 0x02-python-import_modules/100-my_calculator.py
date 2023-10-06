@@ -5,16 +5,15 @@ if __name__ == "__main__":
     if len(sys.argv) - 1 != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    match sys.argv[2]:
-        case '+':
+    elif sys.argv[2] == '+':
             result = add(int(sys.argv[1]), int(sys.argv[3]))
-        case '-':
+    elif sys.argv[2] == '-':
             result = sub(int(sys.argv[1]), int(sys.argv[3]))
-        case '/':
+    elif sys.argv[2] == '/':
             result = div(int(sys.argv[1]), int(sys.argv[3]))
-        case '*':
+    elif sys.argv[2] == '*':
             result = mul(int(sys.argv[1]), int(sys.argv[3]))
-        case _:
+    else:
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
     print(f"{sys.argv[1]} {sys.argv[2]} {sys.argv[3]} = {result}")
