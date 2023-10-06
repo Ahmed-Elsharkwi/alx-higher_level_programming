@@ -14,7 +14,7 @@ if __name__ == "__main__":
             result = div(int(sys.argv[1]), int(sys.argv[3]))
         case '*':
             result = mul(int(sys.argv[1]), int(sys.argv[3]))
-        case '_':
+        case _:
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
     print(f"{sys.argv[1]} {sys.argv[2]} {sys.argv[3]} = {result}")
