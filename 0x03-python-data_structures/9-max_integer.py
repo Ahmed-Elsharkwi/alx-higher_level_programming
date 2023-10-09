@@ -16,3 +16,4 @@ def max_integer(my_list=[]):
             j = j + 1
         if count == 1:
             break
+    return temp
