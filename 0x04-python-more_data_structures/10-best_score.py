@@ -20,4 +20,3 @@ def best_score(a_dictionary):
         if a_dictionary[key] == value:
             return key
     return None
-best_score({"Ahmed": 50, "Mod": 60})
