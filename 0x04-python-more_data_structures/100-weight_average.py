@@ -4,7 +4,7 @@ def weight_average(my_list=[]):
     res = 0
     if my_list is None:
         return 0
-    for l in my_list:
-        sum += l[0] * l[1]
-        res += l[1]
+    for i in my_list:
+        sum += i[0] * i[1]
+        res += i[1]
     return sum / res
