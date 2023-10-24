@@ -3,6 +3,8 @@
 
 
 class Square:
+    '''function check will check if the value is int
+    and it also check if the value is less than zero'''
     def check(value):
         if type(value) is not int:
             raise TypeError("size must be an integer")
