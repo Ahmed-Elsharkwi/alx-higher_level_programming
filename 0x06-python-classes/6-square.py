@@ -43,6 +43,7 @@ class Square:
     '''position setter will set the elements inside position tuple'''
     @position.setter
     def position(self, value):
+        Square.check_1(value)
         index = 0
 
         for i in value:
