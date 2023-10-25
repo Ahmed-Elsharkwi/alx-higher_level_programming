@@ -61,8 +61,6 @@ class Square:
                 counter = 0
                 if self.__position[1] <= 1:
                     print(" "*self.__position[0], end="")
-                else:
-                    print()
                 while counter < self.__size:
                     print("#", end="")
                     counter = counter + 1
