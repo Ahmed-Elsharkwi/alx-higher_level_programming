@@ -53,14 +53,18 @@ class Square:
     '''my_print function will print the area of the square wiht #'''
     def my_print(self):
         if self.__size != 0:
+            incat = 0
             area = self.area()
             size_1 = self.__size
 
             while size_1 <= area:
                 counter = 0
-                if self.__position[1] <= 1:
+                if self.__position[1] < 1:
                     print(" "*self.__position[0], end="")
+                elif self.__position[1] > 0 and incat == 0:
+                    print()
                 while counter < self.__size:
+                    incat = 1
                     print("#", end="")
                     counter = counter + 1
                 size_1 = size_1 + self.__size
