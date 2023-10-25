@@ -13,11 +13,12 @@ class Square:
     ''' function check_1 will check if the elements in the tuple
     are 2 positive integers'''
     def check_1(tup):
-        if len(tup) > 2:
-            raise TypeError('position must be tuple of 2 positive integer')
-        for i in tup:
-            if type(i) is not int or i < 0:
-                raise TypeError('position must be tuple of 2 positive integer')
+        if tup[0] is None or tup is None:
+            raise TypeError('position must be a tuple of 2 positive integer')
+        if len(tup) > 2 or tup[0] < 0 or tup[1] < 0:
+            raise TypeError('position must be a tuple of 2 positive integer')
+        if type(tup[0]) is not int or type(tup[1]) is not int:
+            raise TypeError('position must be a tuple of 2 positive integer')
     '''function which will check if size int or not
     and it will check if the size is less than 0
     assign the value of size to size of the square '''
