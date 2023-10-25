@@ -64,5 +64,6 @@ class Square:
                     print("#", end="")
                     counter = counter + 1
                 size_1 = size_1 + self.__size
+                print()
         else:
             print()
