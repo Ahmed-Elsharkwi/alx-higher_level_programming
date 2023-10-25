@@ -52,6 +52,7 @@ class Square:
             index = index + 1
     '''my_print function will print the area of the square wiht #'''
     def my_print(self):
+        print()
         if self.__size != 0:
             area = self.area()
             size_1 = self.__size
