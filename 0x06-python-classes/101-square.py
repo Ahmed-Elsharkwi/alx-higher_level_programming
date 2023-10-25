@@ -66,8 +66,9 @@ class Square:
                     incat = 1
                     print("#", end="")
                     counter = counter + 1
+                if size_1 != area:
+                    print()
                 size_1 = size_1 + self.__size
-                print()
         else:
             print()
     def __str__(self):
