@@ -57,12 +57,11 @@ class Square:
             area = self.area()
             size_1 = self.__size
 
+            for i in range(self.__position[1]):
+                print()
             while size_1 <= area:
                 counter = 0
-                if self.__position[1] < 1:
-                    print(" "*self.__position[0], end="")
-                elif self.__position[1] > 0 and incat == 0:
-                    print()
+                print(" "*self.__position[0], end="")
                 while counter < self.__size:
                     incat = 1
                     print("#", end="")
