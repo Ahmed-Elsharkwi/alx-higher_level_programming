@@ -56,7 +56,6 @@ class Square:
             area = self.area()
             size_1 = self.__size
 
-            print()
             while size_1 <= area:
                 counter = 0
                 if self.__position[1] <= 1:
