@@ -1,0 +1,31 @@
+Import the fuction add_integer from the module 0-add_integer
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> # Test the function with two integers
+>>> add_integer(4, 5)
+9
+>>> # Test the function with two floats
+>>> add_integer(4.0, 5.50)
+9
+>>> # Test the fuction with None and integer
+>>> add_integer(None, 8)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> # Test the function with integer and None
+>>> add_integer(7, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> # Test the function with two None varibles
+>>> add_integer(None, None)
+Traceback (most recent call last):
+TypeError: a must be an integer and b must be an integer
+>>> # Test the function with two strings
+>>> add_integer("Ahmed", "mo")
+Traceback (most recent call last):
+TypeError: a must be an integer and b must be an integer
+>>> add_integer(5, "mo")
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> add_integer("mo", 8)
+Traceback (most recent call last):
+TypeError: a must be an integer
