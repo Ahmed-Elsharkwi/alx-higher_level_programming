@@ -1,0 +1,28 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+====================================
+The group of test cases
+====================================
+
+>>> say_my_name(12, "Elsharkway")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+>>> say_my_name("Ahmed", 13)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+>>> say_my_name("Ahmed")
+My name is Ahmed 
+
+
+>>> say_my_name("Ahmed", "Elsharkway")
+My name is Ahmed Elsharkway
