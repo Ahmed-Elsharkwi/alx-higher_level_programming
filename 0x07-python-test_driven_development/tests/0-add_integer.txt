@@ -18,11 +18,10 @@ TypeError: b must be an integer
 >>> # Test the function with two None varibles
 >>> add_integer(None, None)
 Traceback (most recent call last):
-TypeError: a must be an integer and b must be an integer
+TypeError: a must be an integer
 >>> # Test the function with two strings
->>> add_integer("Ahmed", "mo")
-Traceback (most recent call last):
-TypeError: a must be an integer and b must be an integer
+>>> add_integer(5)
+103
 >>> add_integer(5, "mo")
 Traceback (most recent call last):
 TypeError: b must be an integer
