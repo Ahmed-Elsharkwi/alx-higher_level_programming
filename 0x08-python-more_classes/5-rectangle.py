@@ -70,6 +70,7 @@ class Rectangle:
         to be able to recreate a new instance
         """
         return "Rectangle({}, {})".format(self.width, self.height)
+
     def __del__(self):
         """delete the object or the instance"""
         del self
