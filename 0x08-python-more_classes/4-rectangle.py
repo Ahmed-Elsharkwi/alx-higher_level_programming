@@ -69,5 +69,8 @@ class Rectangle:
         """should return a string representation of the rectangle
         to be able to recreate a new instance
         """
-        formalua = f"Rectangle ({self.__width}, {self.__height})"
+        self.__width = str(self.__width)
+        self.__height = str(self.__height)
+        formalua = f"Rectangle( {self.__width}, {self.__height})"
+
         return formalua
