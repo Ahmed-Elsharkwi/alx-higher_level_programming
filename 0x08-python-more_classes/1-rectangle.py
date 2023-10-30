@@ -12,7 +12,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """ set the width and height of the Rectangele"""
         self.__width = width
-        self.__heigth = height
+        self.__height = height
 
     @property
     def width(self):
