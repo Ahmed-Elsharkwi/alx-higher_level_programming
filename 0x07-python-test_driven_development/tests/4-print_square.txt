@@ -22,12 +22,10 @@ ValueError: size must be >= 0
 
 
 >>> print_square(0.5)
-<BLANKLINE>
 
 
 >>> print_square(1.5)
 #
-<BLANKLINE>
 
 
 >>> print_square(5)
@@ -36,4 +34,3 @@ ValueError: size must be >= 0
 #####
 #####
 #####
-<BLANKLINE>
