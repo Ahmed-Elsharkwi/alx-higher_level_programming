@@ -9,7 +9,7 @@ Returns the sum of two integers.
  ================================================
 |Importing add_integer() function from its module|
  ================================================
-add_integer = __import('0-add_integer').add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
  =======================
 |Testing regular numbers|
