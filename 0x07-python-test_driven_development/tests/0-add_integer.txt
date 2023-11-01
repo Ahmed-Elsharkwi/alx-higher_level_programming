@@ -38,3 +38,7 @@ TypeError: a must be an integer
 
 >>> add_integer(999999999999999999999999999999, 1)
 1000000000000000000000000000000
+
+
+>>> add_integer(-2, -3)
+-5
