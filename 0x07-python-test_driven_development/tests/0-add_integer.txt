@@ -1,6 +1,7 @@
 >>> add_integer = __import__('0-add_integer').add_integer
 
-
+>>> [add_integer(n, n) for n in range(5)]
+[0, 2, 4, 6, 8]
 >>> add_integer(4, 5)
 9
 >>> add_integer(4.0, 5.50)
