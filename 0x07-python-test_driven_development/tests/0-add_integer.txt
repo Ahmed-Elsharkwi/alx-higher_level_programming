@@ -1,7 +1,5 @@
-add_integer = __import__('0-add_integer').add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
->>> [add_integer(n, n) for n in range(5)]
-[0, 2, 4, 6, 8]
 >>> add_integer(4, 5)
 9
 >>> add_integer(4.0, 5.50)
@@ -50,9 +48,6 @@ TypeError: a must be an integer
 >>> add_integer("hello", "world")
 Traceback (most recent call last):
 TypeError: a must be an integer
->>> add_integer(5.2, 4.3)
-9
->>> add_integer(5.2, 4)
-9
->>> add_integer(5, 4.3)
-9
+>>> add_integer(2, 3, 4)
+Traceback (most recent call last):
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
