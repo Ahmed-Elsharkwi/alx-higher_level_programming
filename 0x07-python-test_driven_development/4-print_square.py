@@ -23,4 +23,3 @@ def print_square(size):
         for _ in range(0, size):
             print("#", end="")
         print()
-    print()
