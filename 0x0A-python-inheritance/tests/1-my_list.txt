@@ -15,3 +15,19 @@
 >>> new_list_1.append(0)
 >>> new_list_1.print_sorted()
 [0, 0, 0]
+
+
+>>> new_list_2 = MyList()
+>>> new_list_2.print_sorted()
+[]
+
+>>> new_list_2.append(-1)
+>>> new_list_2.append(-3)
+>>> new_list_2.append(0)
+>>> new_list_2.print_sorted()
+[-3, -1, 0]
+
+>>> new_list_3 = MyList()
+>>> new_list_3.append(None)
+>>> new_list_3.print_sorted()
+[None]
