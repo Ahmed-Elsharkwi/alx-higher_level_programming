@@ -31,3 +31,15 @@
 >>> new_list_3.append(None)
 >>> new_list_3.print_sorted()
 [None]
+
+
+>>> new_list_4 = MyList(["Ahmed", 1, 2])
+>>> new_list_4.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'int' and 'str'
+
+
+>>> new_list_4.insert(0, None)
+>>> new_list_4.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'str' and 'NoneType'
