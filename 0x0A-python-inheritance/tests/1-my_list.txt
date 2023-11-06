@@ -43,3 +43,15 @@ TypeError: '<' not supported between instances of 'int' and 'str'
 >>> new_list_4.print_sorted()
 Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'str' and 'NoneType'
+
+
+>>> newList = MyList([2, 4, 6, 8, (3,)])
+>>> newList.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'tuple' and 'int'
+
+
+>>> newList= MyList([2, 4, 6, {7}])
+>>> newList.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'set' and 'int'
