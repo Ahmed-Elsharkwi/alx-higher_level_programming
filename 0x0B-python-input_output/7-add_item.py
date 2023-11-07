@@ -15,5 +15,5 @@ try:
 except FileNotFoundError:
     list = []
 for arg in range(1, len(sys.argv)):
-        list.append(sys.argv[arg])
+    list.append(sys.argv[arg])
 save_to_json_file(list, "add_item.json")
