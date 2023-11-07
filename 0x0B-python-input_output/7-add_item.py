@@ -16,5 +16,5 @@ try:
         list.append(sys.argv[arg])
     load_from_json_file("add_item.json")
 except FileNotFoundError:
-    list = []
+    print("The file is not found")
 save_to_json_file(list, "add_item.json")
