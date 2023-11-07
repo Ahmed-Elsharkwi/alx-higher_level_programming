@@ -34,7 +34,10 @@ class Student:
             return dic
         else:
             return self.__dict__
+
     def reload_from_json(self, json):
         """replace the attribute value with the json value"""
+        dict_1 = self.__dict__
         for key, item in json.items():
-            setattr(self, key, value)
+            if key in dict_1:
+                dict_1[key] = item
