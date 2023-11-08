@@ -2,6 +2,7 @@
 """
 class square which is inherits from Rectangle
 """
+
 Rectangle = __import__('9-rectangle').Rectangle
 
 
@@ -13,7 +14,7 @@ class Square(Rectangle):
         self.__size = size
         super().__init__(size, size)
 
-    del __str__(self):
+    def __str__(self):
         """ return string """
         return f"[Square] {self.__size}/<self.__size>"
 
