@@ -1,0 +1,30 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+>>> o = BaseGeometry()
+>>> o.integer_validator("width", 4)
+
+
+>>> o.integer_validator("width", -4)
+Traceback (most recent call last):
+ValueError: width must be greater than 0
+
+
+>>> o.integer_validator("width", 0)
+Traceback (most recent call last):
+ValueError: width must be greater than 0
+
+
+>>> o.integer_validator("width", "with")
+Traceback (most recent call last):
+TypeError: width must be an integer
+
+
+>>> o.integer_validator("tall")
+Traceback (most recent call last):
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
+>>> o.integer_validator("width", None)
+Traceback (most recent call last):
+TypeError: width must be an integer
