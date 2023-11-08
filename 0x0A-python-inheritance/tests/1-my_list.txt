@@ -55,3 +55,17 @@ TypeError: '<' not supported between instances of 'tuple' and 'int'
 >>> newList.print_sorted()
 Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'set' and 'int'
+
+
+>>> new_list_5 = MyList([2, 5, 7, 8])
+>>> str(new_list_5)
+'[2, 5, 7, 8]'
+
+
+>>> new_list_6 = MyList([5, 4, 6, 7])
+>>> print(new_list_6)
+[5, 4, 6, 7]
+
+
+>>> new_list_6.print_sorted()
+[4, 5, 6, 7]
