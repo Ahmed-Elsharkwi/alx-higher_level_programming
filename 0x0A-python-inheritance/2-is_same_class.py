@@ -7,6 +7,6 @@ of the class
 
 def is_same_class(obj, a_class):
     """ check if the obj is instance from the class """
-    if isinstance(obj, a_class) is True:
-        return True
-    return False
+    if obj is None or a_class is None:
+        return False
+    return isinstance(obj, a_class)
