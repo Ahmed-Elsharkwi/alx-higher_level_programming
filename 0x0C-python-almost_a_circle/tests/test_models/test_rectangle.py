@@ -98,3 +98,12 @@ class TestStringMethods(unittest.TestCase):
             obj = Rectangle(1, 2, 4, -5, 12)
             obj.y = 0
         self.assertEqual(str(exc.exception), "y must be >= 0")
+
+    def test_area(self):
+        """ test the area function"""
+        obj = Rectangle(5, 4, 0, 0, 2)
+        self.assertEqual(obj.area(), 20)
+
+        obj.width = 10
+        obj.height = 20
+        self.assertEqual(obj.area(), 200)
