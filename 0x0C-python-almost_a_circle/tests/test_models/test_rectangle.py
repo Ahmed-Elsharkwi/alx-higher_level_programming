@@ -7,8 +7,8 @@ from models.rectangle import Rectangle
 class TestStringMethods(unittest.TestCase):
     """ Test some methods using unittest """
     def test_constructure_getter(self):
-        """ 
-        pass values through constructure 
+        """
+        pass values through constructure
         and get the values using getter
         """
         obj = Rectangle(1, 2, 5, 8, 12)

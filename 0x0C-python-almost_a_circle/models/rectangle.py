@@ -36,7 +36,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ 
+        """
         assign all of those argrument to thier private attributes
         except id is a puplic attribute
         """
