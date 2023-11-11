@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ test the first module """
+import io
+import sys
 import unittest
 from models.rectangle import Rectangle
 
@@ -107,3 +109,26 @@ class TestStringMethods(unittest.TestCase):
         obj.width = 10
         obj.height = 20
         self.assertEqual(obj.area(), 200)
+
+    def test_display(self):
+        """ test the display function """
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        obj_1 = Rectangle(5, 6, 0, 0, 2)
+        obj_1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(), (
+            "#####\n#####\n#####\n#####\n#####\n#####\n"))
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        obj_1.width = 6
+        obj_1.height = 4
+        obj_1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(), (
+            "######\n######\n######\n######\n"))
+
+
+if __name__ == '__main__':
+    unittest.main()
