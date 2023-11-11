@@ -146,7 +146,8 @@ class Test_other_methods(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(), (
             "\n\n\n  ######\n  ######\n  ######\n  ######\n"
-             " #####\n #####\n #####\n"))
+            " #####\n #####\n #####\n"))
+
     def test__str__(self):
         """ test str method """
         r = Rectangle(4, 6)
