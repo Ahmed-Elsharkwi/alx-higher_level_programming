@@ -134,6 +134,19 @@ class Test_other_methods(unittest.TestCase):
         self.assertEqual(capturedOutput.getvalue(), (
             "######\n######\n######\n######\n"))
 
+        obj_1 = Rectangle(6, 4, 2, 3)
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        obj_1.display()
+        obj_1.width = 5
+        obj_1.height = 3
+        obj_1.x = 1
+        obj_1.y = 0
+        obj_1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(), (
+            "\n\n\n  ######\n  ######\n  ######\n  ######\n"
+             " #####\n #####\n #####\n"))
     def test__str__(self):
         """ test str method """
         r = Rectangle(4, 6)

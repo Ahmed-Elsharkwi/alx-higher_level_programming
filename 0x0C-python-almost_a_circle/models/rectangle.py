@@ -101,11 +101,15 @@ class Rectangle(Base):
 
     def display(self):
         """ display the area of the rectangle with #"""
+        for line in range(0, self.__y):
+            print()
         for line in range(0, self.__height):
+            print(" " * self.__x, end="")
             for symbol in range(0, self.__width):
                 print("#", end="")
             print()
 
     def __str__(self):
+        """ return the instance """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.__x, self.__y, self.__width, self.__height)
