@@ -3,7 +3,9 @@
 import io
 import sys
 import unittest
+from unittest.mock import patch, call
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestStringMethods(unittest.TestCase):
@@ -101,6 +103,9 @@ class TestStringMethods(unittest.TestCase):
             obj.y = 0
         self.assertEqual(str(exc.exception), "y must be >= 0")
 
+
+class Test_other_methods(unittest.TestCase):
+    """ test the rest methods of the class rectangle """
     def test_area(self):
         """ test the area function"""
         obj = Rectangle(5, 4, 0, 0, 2)
@@ -128,6 +133,22 @@ class TestStringMethods(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(), (
             "######\n######\n######\n######\n"))
+
+    def test__str__(self):
+        """ test str method """
+        r = Rectangle(4, 6)
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        print(r)
+        r.width = 7
+        r.height = 5
+        r.id = 12
+        r.x = 8
+        r.y = 7
+        print(r)
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(
+            ), "[Rectangle] (2) 0/0 - 4/6\n[Rectangle] (12) 8/7 - 7/5\n")
 
 
 if __name__ == '__main__':

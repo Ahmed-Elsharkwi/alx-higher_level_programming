@@ -1,22 +1,17 @@
-import io
-import sys
 import unittest
+import contextlib
+import io
 
-def foo(name):
-    print(name)
+def foo(inStr):
+    print("hi" + inStr)
 
 class TestFoo(unittest.TestCase):
     def test_foo(self):
-        capturedOutput = io.StringIO() # Create StringIO object
-        sys.stdout = capturedOutput # and redirect stdout.
-        foo("Ahmed") # Call function.
-        sys.stdout = sys.__stdout__ # Reset redirect.
-        self.assertEqual(capturedOutput.getvalue(), ("Ahmed\n")) # Assert output.
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            foo('bar')
+        self.assertEqual(f.getvalue(), 'hibar\n')
 
-        capturedOutput = io.StringIO() # Create StringIO object
-        sys.stdout = capturedOutput
-        foo("Mo")
-        sys.stdout = sys.__stdout__ # Reset redirect.
-        self.assertEqual(capturedOutput.getvalue(), ("Mo\n")) # Assert output.
 if __name__ == '__main__':
     unittest.main()
+
