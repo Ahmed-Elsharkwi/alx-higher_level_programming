@@ -135,34 +135,95 @@ class Test_other_methods(unittest.TestCase):
             "######\n######\n######\n######\n"))
 
         obj_1 = Rectangle(6, 4, 2, 3)
+
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
+
         obj_1.display()
         obj_1.width = 5
         obj_1.height = 3
         obj_1.x = 1
         obj_1.y = 0
         obj_1.display()
+
+        obj_1.x = 0
+        obj_1.y = 0
+        obj_1.display()
+
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(), (
             "\n\n\n  ######\n  ######\n  ######\n  ######\n"
-            " #####\n #####\n #####\n"))
+            " #####\n #####\n #####\n"
+            "#####\n#####\n#####\n"))
 
     def test__str__(self):
         """ test str method """
         r = Rectangle(4, 6)
+
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
+
         print(r)
+
         r.width = 7
         r.height = 5
         r.id = 12
         r.x = 8
         r.y = 7
         print(r)
+
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
             ), "[Rectangle] (2) 0/0 - 4/6\n[Rectangle] (12) 8/7 - 7/5\n")
+
+    def test_update(self):
+        """ test the update method"""
+        r = Rectangle(4, 9)
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+
+        print(r)
+
+        r.update(98)
+        print(r)
+
+        r.update(98, 3)
+        print(r)
+
+        r.update(98, 3, 5)
+        print(r)
+
+        r.update(98, 3, 5, 6)
+        print(r)
+
+        r.update(98, 3, 5, 6, 7)
+        print(r)
+
+        r.update(id=5)
+        print(r)
+
+        r.update(height=7, width=8)
+        print(r)
+
+        r.update(y=8, x=5, width=2, id=7)
+        print(r)
+
+        r.update(x=8, y=9, width=3, height=1, id=5)
+        print(r)
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(
+            ), "[Rectangle] (4) 0/0 - 4/9\n"
+               "[Rectangle] (98) 0/0 - 4/9\n"
+               "[Rectangle] (98) 0/0 - 3/9\n"
+               "[Rectangle] (98) 0/0 - 3/5\n"
+               "[Rectangle] (98) 6/0 - 3/5\n"
+               "[Rectangle] (98) 6/7 - 3/5\n"
+               "[Rectangle] (5) 6/7 - 3/5\n"
+               "[Rectangle] (5) 6/7 - 8/7\n"
+               "[Rectangle] (7) 5/8 - 2/7\n"
+               "[Rectangle] (5) 8/9 - 3/1\n")
 
 
 if __name__ == '__main__':

@@ -45,11 +45,11 @@ class Rectangle(Base):
         Rectangle.check_x(x)
         Rectangle.check_y(y)
 
+        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
         self.__y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -113,3 +113,26 @@ class Rectangle(Base):
         """ return the instance """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """
+        that assigns an argument to each attribute:
+        1st argument should be the id attribute
+        2nd argument should be the width attribute
+        3rd argument should be the height attribute
+        4th argument should be the x attribute
+        5th argument should be the y attribute
+        """
+        keys = []
+        dictonary = vars(self)
+        for key, value in vars(self).items():
+            keys.append(key)
+        if args is not None and args != ():
+            for i in range(0, len(args)):
+                dictonary[keys[i]] = args[i]
+        else:
+            for key, value in kwargs.items():
+                for key_1, value_1 in vars(self).items():
+                    if key in key_1:
+                        dictonary[key_1] = value
+                        break
