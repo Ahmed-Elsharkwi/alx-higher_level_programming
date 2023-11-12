@@ -20,3 +20,32 @@ class Square(Rectangle):
         """ return the instance of the class square"""
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.width)
+
+    @property
+    def size(self):
+        """ get the size of the square"""
+        return self.width
+
+    @size.setter
+    def size(self, size):
+        """ set the size of the square """
+        self.width = size
+        self.height = size
+
+    def update(self, *args, **kwargs):
+        """ update the size """
+        args_1 = []
+        dictionary = {}
+        for arg in range(0, len(args)):
+            args_1.append(args[arg])
+            if arg == 1:
+                args_1.append(args[arg])
+
+        for key, value in kwargs.items():
+            if key == "size":
+                dictionary.update(width=value, height=value)
+
+            else:
+
+                dictionary.update({key: value})
+        Rectangle.update(self, *args_1, **dictionary)

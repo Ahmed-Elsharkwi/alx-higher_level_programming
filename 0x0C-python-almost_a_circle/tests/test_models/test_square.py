@@ -36,7 +36,7 @@ class Test_String_Methods(unittest.TestCase):
         """ test value error """
         with self.assertRaises(ValueError) as exc:
             obj = Square(-1, 4, 5, 12)
-            obj.width = 0
+            obj.size = 0
         self.assertEqual(str(exc.exception), "width must be > 0")
 
         with self.assertRaises(ValueError) as exc:
@@ -53,11 +53,11 @@ class Test_String_Methods(unittest.TestCase):
         """ test the typeError for all variables """
         with self.assertRaises(TypeError) as exc:
             obj = Square("Ahmed", 3, 4, 12)
-            obj.width = "MO"
-            obj.width = [1, 2, 3]
-            obj.width = (1, 2, 3)
-            obj.width = {"key": 1, "key_2": 3}
-            obj.width = None
+            obj.size = "MO"
+            obj.size = [1, 2, 3]
+            obj.size = (1, 2, 3)
+            obj.size = {"key": 1, "key_2": 3}
+            obj.size = None
         self.assertEqual(str(exc.exception), "width must be an integer")
 
         with self.assertRaises(TypeError) as exc:
@@ -77,3 +77,60 @@ class Test_String_Methods(unittest.TestCase):
             obj.y = {"key": 1, "key_2": 3}
             obj.y = None
         self.assertEqual(str(exc.exception), "y must be an integer")
+
+    def test_setter_getter(self):
+        """ set the value of size and get the value"""
+        s = Square(3)
+        self.assertEqual(s.size, 3)
+
+        s.size = 7
+        self.assertEqual(s.size, 7)
+
+    def test_update(self):
+        """ test the update method"""
+        r = Square(4)
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+
+        print(r)
+
+        r.update(98)
+        print(r)
+
+        r.update(98, 3)
+        print(r)
+
+        r.update(98, 3, 5)
+        print(r)
+
+        r.update(98, 3, 5, 6)
+        print(r)
+
+        r.update(id=5)
+        print(r)
+
+        r.update(size=7)
+        print(r)
+
+        r.update(y=8, x=5, size=2, id=7)
+        print(r)
+
+        r.update(x=8, y=9, size=3, id=5)
+        print(r)
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(
+            ), "[Square] (3) 0/0 - 4\n"
+               "[Square] (98) 0/0 - 4\n"
+               "[Square] (98) 0/0 - 3\n"
+               "[Square] (98) 5/0 - 3\n"
+               "[Square] (98) 5/6 - 3\n"
+               "[Square] (5) 5/6 - 3\n"
+               "[Square] (5) 5/6 - 7\n"
+               "[Square] (7) 5/8 - 2\n"
+               "[Square] (5) 8/9 - 3\n")
+
+
+if __name__ == '__main__':
+    unittest.main()
