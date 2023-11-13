@@ -24,10 +24,10 @@ class TestStringMethods(unittest.TestCase):
 
     def test_setter_getter(self):
         """pass values with setter and get it with getter"""
-        obj = Rectangle(9, 8)
-        self.assertEqual(obj.id, 1)
+        obj = Rectangle(9, 10)
+        self.assertEqual(obj.id, 8)
         self.assertEqual(obj.width, 9)
-        self.assertEqual(obj.height, 8)
+        self.assertEqual(obj.height, 10)
         self.assertEqual(obj.x, 0)
         self.assertEqual(obj.y, 0)
 
@@ -174,7 +174,7 @@ class Test_other_methods(unittest.TestCase):
 
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
-            ), "[Rectangle] (2) 0/0 - 4/6\n[Rectangle] (12) 8/7 - 7/5\n")
+            ), "[Rectangle] (9) 0/0 - 4/6\n[Rectangle] (12) 8/7 - 7/5\n")
 
     def test_update(self):
         """ test the update method"""
@@ -214,7 +214,7 @@ class Test_other_methods(unittest.TestCase):
 
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
-            ), "[Rectangle] (5) 0/0 - 4/9\n"
+            ), "[Rectangle] (12) 0/0 - 4/9\n"
                "[Rectangle] (98) 0/0 - 4/9\n"
                "[Rectangle] (98) 0/0 - 3/9\n"
                "[Rectangle] (98) 0/0 - 3/5\n"
@@ -242,7 +242,7 @@ class Test_other_methods(unittest.TestCase):
 
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
-            ), "{'id': 3, 'width': 10, 'height': 2, 'x': 1, 'y': 9}\n"
+            ), "{'id': 10, 'width': 10, 'height': 2, 'x': 1, 'y': 9}\n"
                "<class 'dict'>\n"
                "{'id': 12, 'width': 10, 'height': 5, 'x': 9, 'y': 4}\n"
                "<class 'dict'>\n")

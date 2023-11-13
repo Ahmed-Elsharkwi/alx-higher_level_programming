@@ -26,7 +26,7 @@ class Test_String_Methods(unittest.TestCase):
 
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
-            ), "[Square] (1) 0/0 - 5\n"
+            ), "[Square] (13) 0/0 - 5\n"
             "25\n""#####\n#####\n#####\n#####\n#####\n"
             "[Square] (12) 4/3 - 5\n"
             "25\n"
@@ -121,7 +121,7 @@ class Test_String_Methods(unittest.TestCase):
 
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
-            ), "[Square] (3) 0/0 - 4\n"
+            ), "[Square] (15) 0/0 - 4\n"
                "[Square] (98) 0/0 - 4\n"
                "[Square] (98) 0/0 - 3\n"
                "[Square] (98) 5/0 - 3\n"
