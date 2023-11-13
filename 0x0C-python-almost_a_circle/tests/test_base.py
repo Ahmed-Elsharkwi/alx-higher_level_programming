@@ -87,8 +87,8 @@ class Test_Methods(unittest.TestCase):
 
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
-            ),  '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8},'
-                ' {"id": 7, "width": 2, "height": 4, "x": 0, "y": 0}]\n'
+            ),  '[{"id": 8, "width": 10, "height": 7, "x": 2, "y": 8},'
+                ' {"id": 9, "width": 2, "height": 4, "x": 0, "y": 0}]\n'
                "[]\n")
 
     def test_from_json_string(self):
@@ -115,6 +115,25 @@ class Test_Methods(unittest.TestCase):
             " {'id': 7, 'width': 1, 'height': 7}]\n"
             "[]\n"
             "[]\n")
+
+    def test_create(self):
+        """ test the method create"""
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        print(r1)
+        print(r2)
+        print(r1 is r2)
+        print(r1 == r2)
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(
+        ), "[Rectangle] (6) 1/0 - 3/5\n"
+            "[Rectangle] (6) 1/0 - 3/5\n"
+            "False\nFalse\n")
 
 
 if __name__ == '__main__':
