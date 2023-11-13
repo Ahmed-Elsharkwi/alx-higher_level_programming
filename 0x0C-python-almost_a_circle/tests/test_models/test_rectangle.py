@@ -214,7 +214,7 @@ class Test_other_methods(unittest.TestCase):
 
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
-            ), "[Rectangle] (4) 0/0 - 4/9\n"
+            ), "[Rectangle] (5) 0/0 - 4/9\n"
                "[Rectangle] (98) 0/0 - 4/9\n"
                "[Rectangle] (98) 0/0 - 3/9\n"
                "[Rectangle] (98) 0/0 - 3/5\n"
@@ -224,6 +224,28 @@ class Test_other_methods(unittest.TestCase):
                "[Rectangle] (5) 6/7 - 8/7\n"
                "[Rectangle] (7) 5/8 - 2/7\n"
                "[Rectangle] (5) 8/9 - 3/1\n")
+
+    def test_dict(self):
+        """ test the dict method """
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+
+        r1 = Rectangle(10, 2, 1, 9)
+        dic = r1.to_dictionary()
+        print(dic)
+        print(type(dic))
+
+        r1.update(12, 10, 5, 9, 4)
+        dic_1 = r1.to_dictionary()
+        print(dic_1)
+        print(type(dic_1))
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(
+            ), "{'id': 3, 'width': 10, 'height': 2, 'x': 1, 'y': 9}\n"
+               "<class 'dict'>\n"
+               "{'id': 12, 'width': 10, 'height': 5, 'x': 9, 'y': 4}\n"
+               "<class 'dict'>\n")
 
 
 if __name__ == '__main__':

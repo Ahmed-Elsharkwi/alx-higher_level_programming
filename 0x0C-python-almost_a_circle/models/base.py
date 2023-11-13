@@ -2,6 +2,7 @@
 """
 create a base class
 """
+import json
 
 
 class Base:
@@ -20,3 +21,11 @@ class Base:
         else:
             Base.nb_objects += 1
             self.id = Base.nb_objects
+
+    def to_json_string(list_dictionaries):
+        """ convert the list_dictionaries to json string """
+        if list_dictionaries is None or
+        list_dictionaries == [] or list_dictionaries == [{}]:
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)

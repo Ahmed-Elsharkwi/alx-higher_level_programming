@@ -131,6 +131,29 @@ class Test_String_Methods(unittest.TestCase):
                "[Square] (7) 5/8 - 2\n"
                "[Square] (5) 8/9 - 3\n")
 
+    def test_dict(self):
+        """ test the dict method """
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+
+        r1 = Square(10, 2, 1, 9)
+        dic = r1.to_dictionary()
+        print(dic)
+        print(type(dic))
+
+        r1.update(12, 10, 5, 9)
+        dic_1 = r1.to_dictionary()
+        print(dic_1)
+        print(type(dic_1))
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(
+            ),
+            "{'x': 2, 'y': 1, 'size': 10, 'id': 9}\n"
+            "<class 'dict'>\n"
+            "{'x': 5, 'y': 9, 'size': 10, 'id': 12}\n"
+            "<class 'dict'>\n")
+
 
 if __name__ == '__main__':
     unittest.main()
