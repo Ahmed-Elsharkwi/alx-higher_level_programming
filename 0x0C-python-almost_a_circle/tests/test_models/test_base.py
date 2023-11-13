@@ -67,5 +67,30 @@ class TestStringMethods(unittest.TestCase):
                "[]\n")
 
 
+class Test_Methods(unittest.TestCase):
+    """ test other methods """
+    def test_save_to_file(self):
+        """ test the save file method """
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+
+        with open("Rectangle.json", "r") as file:
+            print(file.read())
+
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            print(file.read())
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(
+            ),  '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8},'
+                ' {"id": 7, "width": 2, "height": 4, "x": 0, "y": 0}]\n'
+               "[]\n")
+
+
 if __name__ == '__main__':
     unittest.main()
