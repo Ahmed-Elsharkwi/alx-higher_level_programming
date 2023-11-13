@@ -5,6 +5,7 @@ import sys
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestStringMethods(unittest.TestCase):
@@ -87,8 +88,8 @@ class Test_Methods(unittest.TestCase):
 
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
-            ),  '[{"id": 8, "width": 10, "height": 7, "x": 2, "y": 8},'
-                ' {"id": 9, "width": 2, "height": 4, "x": 0, "y": 0}]\n'
+            ),  '[{"id": 7, "width": 10, "height": 7, "x": 2, "y": 8},'
+                ' {"id": 8, "width": 2, "height": 4, "x": 0, "y": 0}]\n'
                "[]\n")
 
     def test_from_json_string(self):
@@ -129,10 +130,21 @@ class Test_Methods(unittest.TestCase):
         print(r1 is r2)
         print(r1 == r2)
 
+        s1 = Square(3, 4, 5, 5)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        print(s1)
+        print(s2)
+        print(s1 is s2)
+        print(s1 == s2)
+
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
         ), "[Rectangle] (6) 1/0 - 3/5\n"
            "[Rectangle] (6) 1/0 - 3/5\n"
+           "False\nFalse\n"
+           "[Square] (5) 4/5 - 3\n"
+           "[Square] (5) 4/5 - 3\n"
            "False\nFalse\n")
 
 
