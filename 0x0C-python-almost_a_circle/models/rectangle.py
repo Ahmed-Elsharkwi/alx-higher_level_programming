@@ -136,3 +136,13 @@ class Rectangle(Base):
                     if key in key_1:
                         dictonary[key_1] = value
                         break
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle:"""
+        dic = {}
+        for key, value in self.__dict__.items():
+            if "_Rectangle__" in key:
+                key_list = key.split("_Rectangle__")
+                key = key_list[1]
+            dic.update({key: value})
+        return dic

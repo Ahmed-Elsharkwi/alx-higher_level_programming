@@ -49,3 +49,7 @@ class Square(Rectangle):
 
                 dictionary.update({key: value})
         Rectangle.update(self, *args_1, **dictionary)
+
+    def to_dictionary(self):
+        """  returns the dictionary representation of a Square"""
+        return {'x': self.x, 'y': self.y, 'size': self.width, 'id': self.id}
