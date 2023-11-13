@@ -36,6 +36,7 @@ class Base:
         """ save some content to a file """
         list = []
         name = cls.__name__ + ".json"
+
         with open(name, 'w', encoding="utf-8") as file:
             if list_objs is None:
                 file.write("[]")
@@ -45,3 +46,14 @@ class Base:
                     list.append(obj)
                 list = Base.to_json_string(list)
                 file.write(list)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        returns the list of the JSON string
+        representation json_string
+        """
+        json_1 = json_string
+        if json_1 is None or json_1 == "[]" or json_1 == "[{}]":
+            return []
+        return json.loads(json_string)

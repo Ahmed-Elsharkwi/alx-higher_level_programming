@@ -91,6 +91,31 @@ class Test_Methods(unittest.TestCase):
                 ' {"id": 7, "width": 2, "height": 4, "x": 0, "y": 0}]\n'
                "[]\n")
 
+    def test_from_json_string(self):
+        """ test the from json string """
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+
+        list_input = [
+                {'id': 89, 'width': 10, 'height': 4},
+                {'id': 7, 'width': 1, 'height': 7}]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        print("[{}] {}".format(type(list_output), list_output))
+
+        json_list_input = Rectangle.to_json_string([])
+        print(json_list_input)
+
+        json_list_input = Rectangle.to_json_string([{}])
+        print(json_list_input)
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(capturedOutput.getvalue(
+        ),  "[<class 'list'>] [{'id': 89, 'width': 10, 'height': 4},"
+            " {'id': 7, 'width': 1, 'height': 7}]\n"
+            "[]\n"
+            "[]\n")
+
 
 if __name__ == '__main__':
     unittest.main()
