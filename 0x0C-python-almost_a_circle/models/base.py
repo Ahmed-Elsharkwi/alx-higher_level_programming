@@ -62,9 +62,6 @@ class Base:
     def create(cls, **dictionary):
         """ returns an instance with all attributes already set:"""
         if dictionary is not None or dictonary != {}:
-            if cls.__name__ == "Square":
-                dummy = cls(2, 4, 5, 6)
-            else:
-                dummy = cls(2, 4, 5, 8, 9)
+            dummy = cls(2, 3, 4, 5)
             dummy.update(**dictionary)
             return dummy
