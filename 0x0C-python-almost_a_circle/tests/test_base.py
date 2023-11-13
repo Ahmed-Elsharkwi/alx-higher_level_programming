@@ -132,8 +132,8 @@ class Test_Methods(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
         ), "[Rectangle] (6) 1/0 - 3/5\n"
-            "[Rectangle] (6) 1/0 - 3/5\n"
-            "False\nFalse\n")
+           "[Rectangle] (6) 1/0 - 3/5\n"
+           "False\nFalse\n")
 
 
 if __name__ == '__main__':
