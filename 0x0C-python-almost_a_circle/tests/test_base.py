@@ -88,8 +88,8 @@ class Test_Methods(unittest.TestCase):
 
         sys.stdout = sys.__stdout__
         self.assertEqual(capturedOutput.getvalue(
-            ),  '[{"id": 8, "width": 10, "height": 7, "x": 2, "y": 8},'
-                ' {"id": 9, "width": 2, "height": 4, "x": 0, "y": 0}]\n'
+            ),  '[{"id": 9, "width": 10, "height": 7, "x": 2, "y": 8},'
+                ' {"id": 10, "width": 2, "height": 4, "x": 0, "y": 0}]\n'
                "[]\n")
 
     def test_from_json_string(self):
