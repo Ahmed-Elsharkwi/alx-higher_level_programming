@@ -6,8 +6,7 @@ if (args.length === 2 || args.length === 3) {
   const arr = args.slice(2).map(Number);
   const num = Math.max.apply(null, arr);
   let number = arr[0];
-  if (number === num)
-    number = arr[1];
+  if (number === num) { number = arr[1]; }
   for (let j = 1; j < arr.length; j++) {
     if (number < num && number < arr[j]) {
       if (arr[j] !== num) { number = arr[j]; }
