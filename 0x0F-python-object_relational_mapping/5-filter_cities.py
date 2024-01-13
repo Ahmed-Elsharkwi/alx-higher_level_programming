@@ -11,7 +11,7 @@ def connect():
     cur = db.cursor()
     cur.execute("""SELECT cities.name FROM cities
             JOIN states ON cities.state_id = states.id
-            where states.name = %s ORDER BY cities.id""", (sys.argv[4], ))
+            where states.name = %s""", (sys.argv[4], ))
     rows = cur.fetchall()
     for row in range(len(rows)):
         print(rows[row][0], end='')
