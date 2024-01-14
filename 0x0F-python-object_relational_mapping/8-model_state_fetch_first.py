@@ -18,6 +18,6 @@ if __name__ == "__main__":
     # Query and print all State objects
     q = session.query(State).order_by(State.id).all()
     if q is None:
-        print()
+        print("Nothing")
     else:
         print("{}: {}".format(q[0].id, q[0].name))
