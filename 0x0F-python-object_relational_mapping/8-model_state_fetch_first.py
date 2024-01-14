@@ -12,13 +12,12 @@ if __name__ == "__main__":
     # Create engine and session
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(argv[1], argv[2], argv[3]))
-    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # Query and print all State objects
-    q = session.query(State).order_by(State.id)
+    q = session.query(State).order_by(State.id).first()
     if q is None:
         print("Nothing")
     else:
-        print("{}: {}".format(q[0].id, q[0].name))
+        print("{}: {}".format(q.id, q.name))
