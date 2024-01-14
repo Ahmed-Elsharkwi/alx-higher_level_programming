@@ -17,7 +17,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Query and print all State objects
-    q = session.query(State).order_by(State.id).all()
+    q = session.query(State).order_by(State.id)
     if q is None:
         print("Nothing")
     else:
