@@ -17,8 +17,7 @@ def connect():
         print(rows[row][0], end='')
         if (row != len(rows) - 1):
             print(end=', ')
-        else:
-            print()
+    print()
     cur.close()
     db.close()
 
