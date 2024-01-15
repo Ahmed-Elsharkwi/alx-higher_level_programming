@@ -6,7 +6,6 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import State, Base
 
 
-
 class City(Base):
     """
     class attribute id that represents a column of an auto-generated,
