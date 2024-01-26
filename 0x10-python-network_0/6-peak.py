@@ -11,8 +11,8 @@ def find_peak(list_of_integers):
         if (list_of_integers[i - 1] is None or list_of_integers[
             i] > list_of_integers[i - 1]) and (list_of_integers[
                 i] > list_of_integers[i + 1]):
-                num = list_of_integers[i]
-                break
+            num = list_of_integers[i]
+            break
     if num == 0:
         num = list_of_integers[i]
     return num
