@@ -1,3 +1,3 @@
 #!/bin/bash
 # Bash script that takes in a URL, sends a request to that URL
-curl -s -i -X OPTIONS "$1"
+curl -sL -i -X OPTIONS "$1"
