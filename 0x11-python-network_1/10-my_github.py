@@ -5,7 +5,6 @@ Usage: ./10-my_github.py <GitHub username> <GitHub password>
 """
 import sys
 import requests
-from requests.auth import HTTPBasicAuth
 
 
 if __name__ == "__main__":
