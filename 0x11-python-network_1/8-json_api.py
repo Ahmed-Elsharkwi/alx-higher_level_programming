@@ -9,13 +9,13 @@ if __name__ == "__main__":
     import sys
 
     q=""
-    if sys.argv[1] is not None:
+    if len(sys.argv[1]) == 2:
         q = sys.argv[1]
     r = requests.post(" http://0.0.0.0:5000/search_user", data=q)
     
     try:
         data = r.json()
-        if data is None:
+        if data == {}:
             print("No result")
         else:
             print("[{}] {}".format(data["id"], data["name"]))
