@@ -12,4 +12,12 @@ if __name__ == "__main__":
     if sys.argv[1] is not None:
         q = sys.argv[1]
     r = requests.post(" http://0.0.0.0:5000/search_user", data=q)
-    print(r)
+    
+    try:
+        data = r.json()
+        if data is None:
+            print("No result")
+        else:
+            print("[{}] {}".format(data["id"], data["name"]))
+    except ValueError:
+        print("Not a valid JSON")
