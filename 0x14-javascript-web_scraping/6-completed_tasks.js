@@ -2,9 +2,8 @@
 const request = require('request');
 const newdict = {};
 request.get(process.argv[2], function (err, res, body) {
-  if (err) {
-    console.error('An error occurred:', err);
-    return;
+  if (err){
+     return;
   }
   const data = JSON.parse(body);
   let count = 0;
@@ -17,7 +16,7 @@ request.get(process.argv[2], function (err, res, body) {
 		       user_id = data[i].userId;
 		       count = 1;
 		       newdict[data[i].userId] = count;
-	      }
+	  }
     }
   }
   console.log(newdict);
