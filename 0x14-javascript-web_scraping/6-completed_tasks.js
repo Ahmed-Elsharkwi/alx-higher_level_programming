@@ -1,23 +1,16 @@
 #!/usr/bin/node
 const request = require('request');
-const newdict = {};
-request.get(process.argv[2], function (err, res, body) {
-  if (err){
-     return;
+request(process.argv[2], function (error, response, body) {
+  if (!error) {
+    const todos = JSON.parse(body);
+    const completed = {};
+    todos.forEach((todo) => {
+      if (todo.completed && completed[todo.userId] === undefined) {
+        completed[todo.userId] = 1;
+      } else if (todo.completed) {
+        completed[todo.userId] += 1;
+      }
+    });
+    console.log(completed);
   }
-  const data = JSON.parse(body);
-  let count = 0;
-  let user_id = data[0].userId;
-  for (let i = 0; i < data.length; i++) {
-	  if (data[i].completed === true) {
-	       if (data[i].userId === user_id) {
-		       newdict[data[i].userId] = ++count;
-	      } else if (data[i].userId != user_id) {
-		       user_id = data[i].userId;
-		       count = 1;
-		       newdict[data[i].userId] = count;
-	  }
-    }
-  }
-  console.log(newdict);
 });
